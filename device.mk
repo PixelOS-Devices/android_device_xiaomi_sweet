@@ -32,6 +32,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     hwcomposer.sweet
 
+# Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
+TARGET_USES_DOLBY := true
+
 # Init scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.sweet.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sweet.rc
