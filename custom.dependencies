@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "PixelOS-Devices/android_device_xiaomi_sweetn",
+    "target_path": "device/xiaomi/sweet"
+  },
+  {
+    "repository": "aosp-xiaomi/proprietary_vendor_oneplus_aston",
+    "target_path": "vendor/xiaomi/sweet"
+  }
+]
