@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee4c4721_3d8de97b",
+        "filename": "custom.dependencies",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000023
+      },
+      "writtenOn": "2025-11-20T19:15:47Z",
+      "side": 1,
+      "message": "need fixup\n```suggestion\n    \"repository\": \"NoPrincessHere/proprietary_vendor_xiaomi_miuicamera-sweet\",\n```",
+      "range": {
+        "startLine": 12,
+        "startChar": 34,
+        "endLine": 12,
+        "endChar": 35
+      },
+      "revId": "20ec317b18db9ff76a84a696ab7dba8fe9a889fe",
+      "serverId": "58543e18-2196-4633-8043-7787712585ad"
+    }
+  ]
+}
