@@ -5,6 +5,8 @@
 #
 
 from extract_utils.fixups_blob import (
+    BlobFixupCtx,
+    File,
     blob_fixup,
     blob_fixups_user_type,
 )
@@ -16,6 +18,12 @@ from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
 )
+from extract_utils.tools import (
+    llvm_objdump_path,
+)
+from extract_utils.utils import (
+    run_cmd,
+)
 
 namespace_imports = [
     'hardware/qcom-caf/sm8150',
@@ -23,6 +31,34 @@ namespace_imports = [
     'vendor/qcom/opensource/display',
     'vendor/xiaomi/sm6150-common',
 ]
+
+
+def blob_fixup_graphic_buffer_size(
+    ctx: BlobFixupCtx,
+    file: File,
+    file_path: str,
+    disassemble_symbols: [str],
+    *args,
+    **kwargs,
+):
+    for line in run_cmd(
+        [
+            llvm_objdump_path,
+            f'--disassemble-symbols={",".join(disassemble_symbols)}',
+            file_path,
+        ]
+    ).splitlines():
+        line = line.split(maxsplit=5)
+        if len(line) != 6:
+            continue
+
+        # The size of GraphicBuffer changed from 0x100 to 0xd30
+        offset, _, instruction, register, value, _ = line
+        if instruction == 'mov' and register[:-1] == 'w0' and value == '#0x100':
+            with open(file_path, 'rb+') as f:
+                f.seek(int(offset[:-1], 16))
+                f.write(b'\x00\xa6\x81\x52')  # AArch64 mov w0, #0xd30
+
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
@@ -59,6 +95,17 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('rpcmem_alloc')
         .clear_symbol_version('rpcmem_free')
         .clear_symbol_version('rpcmem_to_fd'),
+    'vendor/lib64/camera/components/com.vidhance.node.eis.so': blob_fixup()
+    .add_needed('libprocessgroup_shim.so')
+    .call(
+        blob_fixup_graphic_buffer_size,
+        [
+            '_ZN5mihal9GraBufferC2EjjimNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE',
+            '_ZN5mihal9GraBufferC2EPKNS_6StreamENSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE',
+            '_ZN5mihal9GraBufferC2EjjimPK13native_handle',
+            '_ZN5mihal9GraBufferC2EPKNS_6StreamEPK13native_handle',
+        ],
+    ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
