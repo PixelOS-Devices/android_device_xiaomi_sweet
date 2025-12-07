@@ -16,6 +16,24 @@
       "message": "Need to sort, check if this applies/works",
       "revId": "02c2407ca90e01441c423ffad15cfae670898601",
       "serverId": "58543e18-2196-4633-8043-7787712585ad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f649e2f_a6f7e8f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000036
+      },
+      "writtenOn": "2025-12-07T17:03:18Z",
+      "side": 1,
+      "message": "Required for micam video recording for front cam",
+      "parentUuid": "eb4d1dcb_56864365",
+      "revId": "02c2407ca90e01441c423ffad15cfae670898601",
+      "serverId": "58543e18-2196-4633-8043-7787712585ad"
     }
   ]
 }
