@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fb840a3_fc8c52d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2025-12-23T18:12:37Z",
+      "side": 1,
+      "message": "atmos?",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 8,
+        "endChar": 1
+      },
+      "revId": "be716e2b495fcb88a16d8cb554b5dc0e8bfb7a1a",
+      "serverId": "58543e18-2196-4633-8043-7787712585ad"
+    }
+  ]
+}
