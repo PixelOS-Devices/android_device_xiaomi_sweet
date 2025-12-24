@@ -33,6 +33,24 @@
       "message": "https://review.pixelos.net/c/PixelOS-Devices/android_device_xiaomi_sm6150-common/+/4227/2",
       "revId": "ba52157e56fcac3dcbe7856e62fd62276bf9788f",
       "serverId": "58543e18-2196-4633-8043-7787712585ad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d37b0999_f12e8555",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2025-12-24T09:17:08Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c7bc8806_10f0c10d",
+      "revId": "ba52157e56fcac3dcbe7856e62fd62276bf9788f",
+      "serverId": "58543e18-2196-4633-8043-7787712585ad"
     }
   ]
 }
