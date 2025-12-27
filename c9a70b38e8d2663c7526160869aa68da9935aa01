@@ -16,6 +16,24 @@
       "message": "We can probably have this on hardware/xiaomi?",
       "revId": "c9a70b38e8d2663c7526160869aa68da9935aa01",
       "serverId": "58543e18-2196-4633-8043-7787712585ad"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2643a20_871223bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2025-12-27T11:34:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d31dde6_89fd0e5b",
+      "revId": "c9a70b38e8d2663c7526160869aa68da9935aa01",
+      "serverId": "58543e18-2196-4633-8043-7787712585ad"
     }
   ]
 }
