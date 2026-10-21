@@ -49,6 +49,15 @@ TARGET_USES_DOLBY := true
 PRODUCT_PACKAGES += \
     DSPVolumeSynchronizer
 
+# Face unlock
+TARGET_PROVIDES_FACE_UNLOCK_HAL := true
+
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.face-service.xiaomi
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml
+
 # Init scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.sweet.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sweet.rc
